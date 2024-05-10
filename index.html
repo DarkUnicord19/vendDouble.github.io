@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vending Machine Catalogue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+        }
+        .item img {
+            width: 100px;
+            height: 100px;
+        }
+        .total {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Vending Machine Catalogue</h2>
+    <div id="catalogue">
+        <!-- Example items -->
+        <div class="item">
+            <img src="https://via.placeholder.com/100" alt="Item 1">
+            <p>Chips - $1.50</p>
+            <button onclick="addToCart(1.50)">Add to cart</button>
+        </div>
+        <div class="item">
+            <img src="https://via.placeholder.com/100" alt="Item 2">
+            <p>Chocolate - $2.00</p>
+            <button onclick="addToCart(2.00)">Add to cart</button>
+        </div>
+        <div class="item">
+            <img src="https://via.placeholder.com/100" alt="Item 3">
+            <p>Soda - $1.00</p>
+            <button onclick="addToCart(1.00)">Add to cart</button>
+        </div>
+    </div>
+    <div class="total">Total: $<span id="totalCost">0.00</span></div>
+
+    <script>
+        let totalCost = 0;
+
+        function addToCart(price) {
+            totalCost += price;
+            document.getElementById('totalCost').innerText = totalCost.toFixed(2);
+        }
+    </script>
+</body>
+</html>
